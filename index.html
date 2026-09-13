@@ -1,0 +1,1412 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ADD TECHNOLOGY | Seguridad y Tecnología</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7fb;
+            color: #07111f;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: #07111f;
+
+            padding: 16px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.20);
+        }
+
+        .logo {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-add {
+            color: #21a4e8;
+            font-size: 29px;
+            font-weight: 800;
+            letter-spacing: 3px;
+        }
+
+        .logo-tech {
+            color: white;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 4px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #21a4e8;
+        }
+
+        .nav-cotizar {
+            background: #21a4e8;
+            padding: 10px 17px;
+            border-radius: 6px;
+        }
+
+        .nav-cotizar:hover {
+            color: white;
+            background: #168dcc;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 650px;
+
+            position: relative;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(7, 17, 31, 0.93),
+                    rgba(7, 17, 31, 0.65),
+                    rgba(7, 17, 31, 0.35)
+                ),
+                url("imagenes/fondo.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            width: 100%;
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 80px 7%;
+
+            color: white;
+        }
+
+        .hero-content h1 {
+            max-width: 800px;
+
+            font-size: clamp(40px, 6vw, 70px);
+
+            line-height: 1.05;
+
+            margin-bottom: 25px;
+        }
+
+        .hero-content h1 span {
+            color: #21a4e8;
+        }
+
+        .hero-content p {
+            max-width: 720px;
+
+            font-size: 18px;
+
+            color: #e5edf5;
+
+            margin-bottom: 35px;
+        }
+
+        .btn-principal {
+            display: inline-block;
+
+            background: #21a4e8;
+
+            color: white;
+
+            padding: 14px 25px;
+
+            border-radius: 7px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+
+            box-shadow: 0 8px 25px rgba(33, 164, 232, 0.25);
+        }
+
+        .btn-principal:hover {
+            background: #168dcc;
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           SERVICIOS
+        ========================= */
+
+        .servicios {
+            padding: 90px 7%;
+        }
+
+        .titulo-seccion {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .titulo-seccion h2 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .titulo-seccion p {
+            color: #667085;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .servicios-grid {
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .servicio-card {
+            background: white;
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s;
+        }
+
+        .servicio-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, 0.13);
+        }
+
+        .servicio-card img {
+            width: 100%;
+            height: 210px;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+        .servicio-contenido {
+            padding: 24px;
+        }
+
+        .servicio-contenido h3 {
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .servicio-contenido p {
+            color: #667085;
+            font-size: 14px;
+        }
+
+        /* =========================
+           CONTACTO
+        ========================= */
+
+        .contacto {
+            background: #07111f;
+
+            color: white;
+
+            padding: 90px 7%;
+        }
+
+        .contacto-container {
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 60px;
+
+            align-items: center;
+        }
+
+        .contacto-info h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .contacto-info h2 span {
+            color: #21a4e8;
+        }
+
+        .contacto-info p {
+            color: #b9c4d0;
+            margin-bottom: 30px;
+        }
+
+        .contacto-lista {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contacto-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            color: #e4ebf2;
+
+            font-size: 15px;
+        }
+
+        .contacto-item span {
+            color: #21a4e8;
+            font-size: 20px;
+        }
+
+        /* =========================
+           FORMULARIO
+        ========================= */
+
+        .formulario {
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
+        }
+
+        .formulario h3 {
+            color: #07111f;
+
+            font-size: 25px;
+
+            margin-bottom: 25px;
+        }
+
+        .campo {
+            margin-bottom: 17px;
+        }
+
+        .campo label {
+            display: block;
+
+            color: #07111f;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            margin-bottom: 7px;
+        }
+
+        .campo input,
+        .campo select,
+        .campo textarea {
+            width: 100%;
+
+            border: 1px solid #d7dee7;
+
+            border-radius: 6px;
+
+            padding: 13px;
+
+            font-family: inherit;
+
+            font-size: 14px;
+
+            outline: none;
+
+            transition: 0.3s;
+        }
+
+        .campo input:focus,
+        .campo select:focus,
+        .campo textarea:focus {
+            border-color: #21a4e8;
+
+            box-shadow:
+                0 0 0 3px rgba(33, 164, 232, 0.10);
+        }
+
+        .campo textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .btn-whatsapp {
+            width: 100%;
+
+            border: none;
+
+            background: #25D366;
+
+            color: white;
+
+            padding: 14px;
+
+            border-radius: 7px;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            background: #20bd5a;
+
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           BOTÓN FLOTANTE WHATSAPP
+        ========================= */
+
+        .whatsapp-flotante {
+            position: fixed;
+
+            right: 22px;
+            bottom: 22px;
+
+            width: 64px;
+            height: 64px;
+
+            background: #25D366;
+
+            color: white;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-decoration: none;
+
+            box-shadow:
+                0 6px 22px rgba(0, 0, 0, 0.30);
+
+            z-index: 9999;
+
+            transition: all 0.3s ease;
+
+            animation: pulsoWhatsapp 2s infinite;
+        }
+
+        .whatsapp-flotante svg {
+            width: 34px;
+            height: 34px;
+
+            fill: white;
+        }
+
+        .whatsapp-flotante:hover {
+            transform: scale(1.12);
+
+            background: #20bd5a;
+
+            box-shadow:
+                0 8px 28px rgba(0, 0, 0, 0.35);
+        }
+
+        /* =========================
+           MENSAJE WHATSAPP
+        ========================= */
+
+        .whatsapp-tooltip {
+            position: absolute;
+
+            right: 76px;
+            top: 50%;
+
+            transform:
+                translateY(-50%)
+                translateX(10px);
+
+            background: #07111f;
+
+            color: white;
+
+            padding: 10px 15px;
+
+            border-radius: 8px;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            white-space: nowrap;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition: all 0.3s ease;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.20);
+        }
+
+        .whatsapp-flotante:hover .whatsapp-tooltip {
+            opacity: 1;
+
+            visibility: visible;
+
+            transform:
+                translateY(-50%)
+                translateX(0);
+        }
+
+        .whatsapp-tooltip::after {
+            content: "";
+
+            position: absolute;
+
+            right: -6px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            border-width: 6px 0 6px 6px;
+
+            border-style: solid;
+
+            border-color:
+                transparent
+                transparent
+                transparent
+                #07111f;
+        }
+
+        /* =========================
+           ANIMACIÓN WHATSAPP
+        ========================= */
+
+        @keyframes pulsoWhatsapp {
+
+            0% {
+                box-shadow:
+                    0 0 0 0 rgba(37, 211, 102, 0.55),
+                    0 6px 22px rgba(0, 0, 0, 0.30);
+            }
+
+            70% {
+                box-shadow:
+                    0 0 0 14px rgba(37, 211, 102, 0),
+                    0 6px 22px rgba(0, 0, 0, 0.30);
+            }
+
+            100% {
+                box-shadow:
+                    0 0 0 0 rgba(37, 211, 102, 0),
+                    0 6px 22px rgba(0, 0, 0, 0.30);
+            }
+
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #050c16;
+
+            color: #8895a5;
+
+            text-align: center;
+
+            padding: 25px 15px;
+
+            font-size: 13px;
+        }
+
+        footer strong {
+            color: #21a4e8;
+        }
+
+        /* =========================
+           TABLETS
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .servicios-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contacto-container {
+                grid-template-columns: 1fr;
+
+                gap: 45px;
+            }
+
+        }
+
+        /* =========================
+           CELULARES
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 14px 5%;
+
+                flex-direction: column;
+
+                gap: 14px;
+            }
+
+            nav {
+                gap: 15px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .hero {
+                min-height: 570px;
+            }
+
+            .hero-content {
+                padding: 60px 6%;
+            }
+
+            .hero-content h1 {
+                font-size: 42px;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+
+            .servicios {
+                padding: 65px 6%;
+            }
+
+            .titulo-seccion h2 {
+                font-size: 31px;
+            }
+
+            .servicios-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contacto {
+                padding: 65px 6%;
+            }
+
+            .contacto-info h2 {
+                font-size: 34px;
+            }
+
+            .formulario {
+                padding: 25px 20px;
+            }
+
+            /* WhatsApp móvil */
+
+            .whatsapp-flotante {
+                width: 58px;
+                height: 58px;
+
+                right: 16px;
+                bottom: 16px;
+            }
+
+            .whatsapp-flotante svg {
+                width: 30px;
+                height: 30px;
+            }
+
+            .whatsapp-tooltip {
+                display: none;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+
+        <a href="#inicio" class="logo">
+
+            <span class="logo-add">
+                ADD
+            </span>
+
+            <span class="logo-tech">
+                TECHNOLOGY
+            </span>
+
+        </a>
+
+
+        <nav>
+
+            <a href="#inicio">
+                Inicio
+            </a>
+
+            <a href="#servicios">
+                Servicios
+            </a>
+
+            <a href="#contacto">
+                Contacto
+            </a>
+
+            <a
+                href="#contacto"
+                class="nav-cotizar"
+            >
+                Solicitar cotización
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section
+        class="hero"
+        id="inicio"
+    >
+
+        <div class="hero-content">
+
+            <h1>
+                Protegemos lo que
+                <span>
+                    más importa.
+                </span>
+            </h1>
+
+            <p>
+                Instalación y mantenimiento de sistemas
+                de seguridad, conectividad y tecnología
+                para hogares, negocios y empresas.
+            </p>
+
+            <a
+                href="#contacto"
+                class="btn-principal"
+            >
+                Solicitar cotización
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SERVICIOS
+    ========================= -->
+
+    <section
+        class="servicios"
+        id="servicios"
+    >
+
+        <div class="titulo-seccion">
+
+            <h2>
+                Nuestros servicios
+            </h2>
+
+            <p>
+                Soluciones profesionales de seguridad
+                y tecnología adaptadas a las necesidades
+                de cada cliente.
+            </p>
+
+        </div>
+
+
+        <div class="servicios-grid">
+
+
+            <!-- CCTV -->
+
+            <div class="servicio-card">
+
+                <img
+                    src="imagenes/cctv.jpg.jpg"
+                    alt="Sistema CCTV"
+                >
+
+                <div class="servicio-contenido">
+
+                    <h3>
+                        CCTV
+                    </h3>
+
+                    <p>
+                        Instalación, configuración y
+                        mantenimiento de sistemas de
+                        videovigilancia para hogares,
+                        negocios y empresas.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTROL DE ACCESO -->
+
+            <div class="servicio-card">
+
+                <img
+                    src="imagenes/contro vehicular.jpg.avif"
+                    alt="Control de acceso"
+                >
+
+                <div class="servicio-contenido">
+
+                    <h3>
+                        Control de acceso
+                    </h3>
+
+                    <p>
+                        Sistemas de control de acceso
+                        peatonal y vehicular, lectores,
+                        barreras, tags y soluciones
+                        inteligentes.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- INCENDIO -->
+
+            <div class="servicio-card">
+
+                <img
+                    src="imagenes/sistemas de incendio.jpg.webp"
+                    alt="Sistema contra incendio"
+                >
+
+                <div class="servicio-contenido">
+
+                    <h3>
+                        Sistemas contra incendio
+                    </h3>
+
+                    <p>
+                        Instalación y mantenimiento de
+                        sistemas de detección y alarma
+                        contra incendios.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ALARMAS -->
+
+            <div class="servicio-card">
+
+                <img
+                    src="imagenes/alarmas.jpg.webp"
+                    alt="Alarmas de seguridad"
+                >
+
+                <div class="servicio-contenido">
+
+                    <h3>
+                        Alarmas
+                    </h3>
+
+                    <p>
+                        Alarmas para hogares, negocios
+                        y comunidades con soluciones
+                        de seguridad confiables.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CERCO ELECTRICO -->
+
+            <div class="servicio-card">
+
+                <img
+                    src="imagenes/cerca-electrica.jpg.webp"
+                    alt="Cerco eléctrico"
+                >
+
+                <div class="servicio-contenido">
+
+                    <h3>
+                        Cerco eléctrico
+                    </h3>
+
+                    <p>
+                        Instalación y mantenimiento de
+                        sistemas de protección perimetral
+                        con cerco eléctrico.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- LAMINAS -->
+
+            <div class="servicio-card">
+
+                <img
+                    src="imagenes/laminas.jpg.webp"
+                    alt="Láminas de seguridad"
+                >
+
+                <div class="servicio-contenido">
+
+                    <h3>
+                        Láminas de seguridad
+                    </h3>
+
+                    <p>
+                        Instalación de láminas de seguridad
+                        para protección de vidrios y
+                        espacios comerciales.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- DOMOTICA -->
+
+            <div class="servicio-card">
+
+                <img
+                    src="imagenes/domotica.jpg.webp"
+                    alt="Domótica"
+                >
+
+                <div class="servicio-contenido">
+
+                    <h3>
+                        Domótica
+                    </h3>
+
+                    <p>
+                        Automatización inteligente para
+                        hogares, oficinas y negocios.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- REDES -->
+
+            <div class="servicio-card">
+
+                <img
+                    src="imagenes/redes.jpg.webp"
+                    alt="Redes y Wi-Fi"
+                >
+
+                <div class="servicio-contenido">
+
+                    <h3>
+                        Puntos de red y Wi-Fi
+                    </h3>
+
+                    <p>
+                        Instalación de puntos de red,
+                        cableado estructurado y soluciones
+                        de conectividad.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ELECTRICOS -->
+
+            <div class="servicio-card">
+
+                <img
+                    src="imagenes/puntos electricos.jpg.jpg"
+                    alt="Puntos eléctricos"
+                >
+
+                <div class="servicio-contenido">
+
+                    <h3>
+                        Puntos eléctricos
+                    </h3>
+
+                    <p>
+                        Instalación de puntos eléctricos
+                        y soluciones para instalaciones
+                        residenciales y comerciales.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACTO
+    ========================= -->
+
+    <section
+        class="contacto"
+        id="contacto"
+    >
+
+        <div class="contacto-container">
+
+
+            <!-- INFORMACIÓN -->
+
+            <div class="contacto-info">
+
+                <h2>
+                    Solicita tu
+                    <span>
+                        cotización
+                    </span>
+                </h2>
+
+                <p>
+                    Cuéntanos qué necesitas y nuestro
+                    equipo se pondrá en contacto contigo
+                    para ofrecerte una solución adecuada.
+                </p>
+
+
+                <div class="contacto-lista">
+
+                    <div class="contacto-item">
+
+                        <span>
+                            ✓
+                        </span>
+
+                        Atención rápida por WhatsApp
+
+                    </div>
+
+
+                    <div class="contacto-item">
+
+                        <span>
+                            ✓
+                        </span>
+
+                        Asesoría personalizada
+
+                    </div>
+
+
+                    <div class="contacto-item">
+
+                        <span>
+                            ✓
+                        </span>
+
+                        Soluciones a tu medida
+
+                    </div>
+
+
+                    <div class="contacto-item">
+
+                        <span>
+                            📍
+                        </span>
+
+                        Guayaquil - Ecuador
+
+                    </div>
+
+
+                    <div class="contacto-item">
+
+                        <span>
+                            ◆
+                        </span>
+
+                        ADD TECH
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FORMULARIO -->
+
+            <form
+                class="formulario"
+                id="formulario"
+            >
+
+                <h3>
+                    Envíanos tus datos
+                </h3>
+
+
+                <div class="campo">
+
+                    <label for="nombre">
+                        Nombre completo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombre"
+                        placeholder="Escribe tu nombre"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="telefono">
+                        Teléfono
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="telefono"
+                        placeholder="Ej: 0963167286"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="servicio">
+                        Servicio
+                    </label>
+
+                    <select
+                        id="servicio"
+                        required
+                    >
+
+                        <option value="">
+                            Selecciona un servicio
+                        </option>
+
+                        <option value="CCTV">
+                            CCTV
+                        </option>
+
+                        <option value="Control de acceso">
+                            Control de acceso
+                        </option>
+
+                        <option value="Sistema contra incendio">
+                            Sistema contra incendio
+                        </option>
+
+                        <option value="Alarmas">
+                            Alarmas
+                        </option>
+
+                        <option value="Cerco eléctrico">
+                            Cerco eléctrico
+                        </option>
+
+                        <option value="Láminas de seguridad">
+                            Láminas de seguridad
+                        </option>
+
+                        <option value="Domótica">
+                            Domótica
+                        </option>
+
+                        <option value="Puntos de red y Wi-Fi">
+                            Puntos de red y Wi-Fi
+                        </option>
+
+                        <option value="Puntos eléctricos">
+                            Puntos eléctricos
+                        </option>
+
+                        <option value="Otro">
+                            Otro
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="mensaje">
+                        Mensaje
+                    </label>
+
+                    <textarea
+                        id="mensaje"
+                        placeholder="Cuéntanos qué necesitas..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn-whatsapp"
+                >
+                    📱 Enviar por WhatsApp
+                </button>
+
+            </form>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         WHATSAPP FLOTANTE
+    ========================= -->
+
+    <a
+        href="https://wa.me/593963167286?text=Hola%20ADD%20TECHNOLOGY%2C%20deseo%20informaci%C3%B3n%20sobre%20sus%20servicios."
+        class="whatsapp-flotante"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contactar por WhatsApp"
+        title="Escríbenos por WhatsApp"
+    >
+
+        <!-- Ícono WhatsApp -->
+
+        <svg
+            viewBox="0 0 32 32"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+        >
+
+            <path d="M19.11 17.21c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.33-.79-.7-1.33-1.57-1.49-1.84-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47-.16-.01-.34-.01-.52-.01-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.97 2.63 1.11 2.81c.14.18 1.9 2.9 4.6 4.07.64.28 1.14.45 1.53.57.64.2 1.22.17 1.68.1.51-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
+
+            <path d="M16.01 3.2c-7.06 0-12.8 5.74-12.8 12.8 0 2.25.59 4.36 1.63 6.19L3.1 28.8l6.77-1.7a12.73 12.73 0 0 0 6.14 1.57h.01c7.05 0 12.79-5.74 12.79-12.8 0-3.42-1.33-6.63-3.75-9.04A12.7 12.7 0 0 0 16.01 3.2zm0 23.36h-.01a10.56 10.56 0 0 1-5.38-1.47l-.39-.23-4.02 1.01 1.07-3.92-.25-.4a10.57 10.57 0 1 1 8.98 5.01z"/>
+
+        </svg>
+
+
+        <span class="whatsapp-tooltip">
+            ¿Necesitas ayuda? Escríbenos
+        </span>
+
+    </a>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        © 2026
+        <strong>
+            ADD TECHNOLOGY
+        </strong>
+        - Seguridad y Tecnología
+
+        <br>
+
+        Instalación y mantenimiento profesional
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        /* =========================
+           NÚMERO WHATSAPP
+        ========================= */
+
+        const whatsapp = "593963167286";
+
+
+        /* =========================
+           FORMULARIO WHATSAPP
+        ========================= */
+
+        document
+            .getElementById("formulario")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+
+                const nombre =
+                    document
+                        .getElementById("nombre")
+                        .value;
+
+
+                const telefono =
+                    document
+                        .getElementById("telefono")
+                        .value;
+
+
+                const servicio =
+                    document
+                        .getElementById("servicio")
+                        .value;
+
+
+                const mensaje =
+                    document
+                        .getElementById("mensaje")
+                        .value;
+
+
+                const texto =
+`Hola ADD TECHNOLOGY, deseo solicitar una cotización.
+
+Nombre: ${nombre}
+
+Teléfono: ${telefono}
+
+Servicio: ${servicio}
+
+Mensaje: ${mensaje}`;
+
+
+                const url =
+                    "https://wa.me/" +
+                    whatsapp +
+                    "?text=" +
+                    encodeURIComponent(texto);
+
+
+                window.open(
+                    url,
+                    "_blank"
+                );
+
+            });
+
+    </script>
+
+
+</body>
+
+</html>
